@@ -67,7 +67,6 @@ public class Person {
     public void setAddress(Address address) { this.address = address;
     }
 
-    // TODO: Catches for nulls that see if both match to pass equiv
     @Override
     public boolean equals(Object o) {
         if(o != null && o instanceof Person)

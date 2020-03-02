@@ -64,7 +64,6 @@ public class StringUtils {
 
         for(Integer i = 0; i < string.length(); i++)
         {
-            // TODO: Ugly as hell but works
             int charToTest = (int)string.charAt(i);
             if(     !((charToTest > 64 && charToTest < 91) ||
                       (charToTest > 96 && charToTest < 123) ||
@@ -102,7 +101,6 @@ public class StringUtils {
 
         for(Integer i = 0; i < string.length(); i++)
         {
-            // TODO: Ugly as hell but works
             int charToTest = (int)string.charAt(i);
             if(     (charToTest > 47 && charToTest < 58) ||
                     (charToTest > 65 && charToTest < 91) ||

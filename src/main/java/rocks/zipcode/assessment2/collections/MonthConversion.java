@@ -47,7 +47,7 @@ public class MonthConversion {
      */
     public Integer getNumber(String monthName)
     {
-        // TODO: Figure this out.  How to return a null for int?
+        // TODO: Figure this out.  How to return a null for int?  Changed to Integer but not sure if that's allowed
         if(!monthsToInteger.containsKey(monthName))
         {
             return (Integer)null;
