@@ -1,6 +1,5 @@
 package rocks.zipcode.assessment2.collections;
 
-import java.time.Month;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +27,17 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year
      * @return the name of the respective month
      */
-    public String getName(Integer monthNumber) {
+    public String getName(Integer monthNumber)
+    {
+
+        for(Map.Entry<String, Integer> entry : monthsToInteger.entrySet())
+        {
+            if(entry.getValue() == monthNumber)
+            {
+                return entry.getKey();
+            }
+        }
+
         throw new NullPointerException();
     }
 
@@ -36,38 +45,51 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        return (Integer)null;
+    public int getNumber(String monthName)
+    {
+        // TODO: Figure this out.  How to return a null for int?
+        if(!monthsToInteger.containsKey(monthName))
+        {
+            Integer result = null;
+            return result;
+        }
+        else
+        {
+            return monthsToInteger.get(monthName);
+        }
     }
 
     /**
      * @param monthNumber
      * @return true if the monthNumber is in the keySet
      */
-    public Boolean isValidNumber(Integer monthNumber) {
-        return null;
+    public Boolean isValidNumber(Integer monthNumber)
+    {
+        return monthsToInteger.containsValue(monthNumber);
     }
 
     /**
      * @param monthName
      * @return true if the monthName is in the valueSet
      */
-    public Boolean isValidMonth(String monthName) {
-        return null;
+    public Boolean isValidMonth(String monthName)
+    {
+        return monthsToInteger.containsKey(monthName);
     }
 
     /**
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return monthsToInteger.size();
     }
 
     /**
      * @param monthNumber - number of month in year
      * @param monthName - name of month
      */
-    public void update(Integer monthNumber, String monthName) {
-
+    public void update(Integer monthNumber, String monthName)
+    {
+        monthsToInteger.put(monthName, monthNumber);
     }
 }

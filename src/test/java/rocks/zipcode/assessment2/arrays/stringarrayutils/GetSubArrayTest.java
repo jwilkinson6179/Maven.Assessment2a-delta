@@ -38,7 +38,6 @@ public class GetSubArrayTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
-    // TODO: Come back for these
     @Test(expected = IndexOutOfBoundsException.class)
     public void testGetSubArrayOutOfBounds1() {
         // given
@@ -50,7 +49,6 @@ public class GetSubArrayTest {
         StringArrayUtils.getSubArray(input, startIndex, endIndex);
     }
 
-    // TODO: Come back for these
     @Test(expected = IllegalArgumentException.class)
     public void testGetSubArrayOutOfBounds2() {
         // given
