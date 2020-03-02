@@ -2,6 +2,7 @@ package rocks.zipcode.assessment2.collections;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Use a map to solve
@@ -29,7 +30,6 @@ public class MonthConversion {
      */
     public String getName(Integer monthNumber)
     {
-
         for(Map.Entry<String, Integer> entry : monthsToInteger.entrySet())
         {
             if(entry.getValue() == monthNumber)
@@ -38,14 +38,14 @@ public class MonthConversion {
             }
         }
 
-        throw new NullPointerException();
+        return null;
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName)
+    public Integer getNumber(String monthName)
     {
         // TODO: Figure this out.  How to return a null for int?
         if(!monthsToInteger.containsKey(monthName))
