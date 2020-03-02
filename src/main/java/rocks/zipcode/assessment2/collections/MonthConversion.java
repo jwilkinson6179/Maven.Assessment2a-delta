@@ -50,8 +50,7 @@ public class MonthConversion {
         // TODO: Figure this out.  How to return a null for int?
         if(!monthsToInteger.containsKey(monthName))
         {
-            Integer result = null;
-            return result;
+            return (Integer)null;
         }
         else
         {
