@@ -67,8 +67,8 @@ public class StringUtils {
             // TODO: Ugly as hell but works
             int charToTest = (int)string.charAt(i);
             if(     !((charToTest > 64 && charToTest < 91) ||
-                    (charToTest > 96 && charToTest < 123) ||
-                    charToTest == 32))
+                      (charToTest > 96 && charToTest < 123) ||
+                       charToTest == 32))
             {
                 isAlpha = false;
             }
@@ -82,7 +82,15 @@ public class StringUtils {
      * @return - true if string only contains numeric characters
      */
     public static Boolean isNumericString(String string) {
-        return null;
+        try
+        {
+            Double.parseDouble(string);
+        } catch (Exception e)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -90,6 +98,20 @@ public class StringUtils {
      * @return - true if string only contains special characters
      */
     public static Boolean isSpecialCharacterString(String string) {
-        return null;
+        Boolean isSpecial = true;
+
+        for(Integer i = 0; i < string.length(); i++)
+        {
+            // TODO: Ugly as hell but works
+            int charToTest = (int)string.charAt(i);
+            if(     (charToTest > 47 && charToTest < 58) ||
+                    (charToTest > 65 && charToTest < 91) ||
+                    (charToTest > 96 && charToTest < 123))
+            {
+                isSpecial = false;
+            }
+        }
+
+        return isSpecial;
     }
 }
