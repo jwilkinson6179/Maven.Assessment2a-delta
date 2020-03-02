@@ -14,9 +14,32 @@ public class Person {
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
+        if(id != null)
+        {
+            this.id = id;
+        }
+        else
+        {
+            this.id = Long.MIN_VALUE;
+        }
+
+        if(name != null)
+        {
+            this.name = name;
+        }
+        else
+        {
+            this.name = "";
+        }
+
+        if(address != null)
+        {
+            this.address = address;
+        }
+        else
+        {
+            this.address = new Address();
+        }
     }
 
     public Person() {
