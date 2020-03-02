@@ -53,7 +53,11 @@ public class IntegerArrayUtils {
 
         for(Integer i = 0; i < integerArray.length; i++)
         {
-            if(integerArray[i] % 2 != 0)
+            if(integerArray[i] % 2 == 0)
+            {
+                output[i] = integerArray[i] + 1;
+            }
+            else
             {
                 output[i] = integerArray[i] - 1;
             }
@@ -67,7 +71,21 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        Integer[] output = new Integer[integerArray.length];
+
+        for(Integer i = 0; i < integerArray.length; i++)
+        {
+            if(integerArray[i] % 2 == 0)
+            {
+                output[i] = integerArray[i] + 1;
+            }
+            else
+            {
+                output[i] = integerArray[i];
+            }
+        }
+
+        return output;
     }
 
     /**
@@ -75,6 +93,20 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        Integer[] output = new Integer[input.length];
+
+        for(Integer i = 0; i < input.length; i++)
+        {
+            if(input[i] % 2 != 0)
+            {
+                output[i] = input[i] - 1;
+            }
+            else
+            {
+                output[i] = input[i];
+            }
+        }
+
+        return output;
     }
 }
